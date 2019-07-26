@@ -3,7 +3,6 @@ layout: post
 title: "터미널에서 원하는 프로그램 실행하는 법"
 date: 2019-07-07 15:38:05 +0900
 update: 2019-07-25 22:06:48 +0900
-toc: true
 categories: tutorial terminal shell
 ---
 

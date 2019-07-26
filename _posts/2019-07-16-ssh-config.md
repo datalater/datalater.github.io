@@ -1,15 +1,9 @@
 ---
+layout: post
 title: "SSH로 자주 접속하는 IP address 등록하는 법"
-date: 2019-07-16 13:19:05 -0400
+date: 2019-07-16 13:19:05 +0900
+update: 2019-07-26 23:34:40 +0900
 categories: tutorial ssh config
----
-
-<!-- TOC START min:1 max:4 link:true asterisk:true update:true -->
-* [문제 상황](#문제-상황)
-* [목표](#목표)
-* [해결책](#해결책)
-<!-- TOC END -->
-
 ---
 
 # 문제 상황
@@ -56,7 +50,3 @@ Host api-server
 ```bash
 $ ssh api-server
 ```
-
----
-
-**END**
