@@ -28,7 +28,7 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-theme: jekyll-theme-minimal
+theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
