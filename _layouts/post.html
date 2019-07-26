@@ -1,29 +1,76 @@
 ---
 layout: default
 ---
+<head>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+</head>
 <style>
-p.edit-date {
+.post-header p.edit-date {
 	margin: 0;
 	text-align: right;
-	color: gray;
+	color: #4a4a4a;
 }
 
-ul#markdown-toc {
+.post-content {
+	background-color: #fff;
+	color: #4a4a4a;
+	line-height: 1.7;
+}
+.post-content code, .edit-date {
+	font-family: Ubuntu, sans-serif;
+}
+
+code, .highlighter-rouge .highlight {
+	background-color: #f9f9f9;
+}
+
+.post-content ul#markdown-toc {
     border: 1px solid;
 	margin-left: 0px;
 	margin-top: 15px;
     padding: 10px;
     padding-left: 30px;
     background-color: #FFFFFF;
+	line-height: 1.5;
 }
-/*
-pre, code, .highlighter-rouge .highlight {
-	background-color: rgba(27,31,35,.05);
-}
-*/
-</style>
-<h1>{{ page.title }}</h1>
-<p class="edit-date">created: {{ page.date | date: "%Y.%m.%d" }}</p>
-<p class="edit-date">updated: {{ page.update | date: "%Y.%m.%d" }}</p>
 
-{{ content }}
+.post-content h1, h2, h3, h4, h5, h6 {
+	color: #000000;
+	font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    margin-top: 24px;
+}
+
+.post-content h1 {
+	font-size: 2em;
+	border-bottom: 2px solid #eaecef;
+	padding-bottom: .3em;
+}
+
+.post-content h2 {
+	font-size : 1.52em;
+}
+
+.footer-heading {
+	color: white;
+}
+
+.site-footer {
+	background-color: black;
+}
+
+blockquote {
+	letter-spacing: normal;
+	font-size: medium;
+}
+</style>
+
+<div class="post-header">
+	<h1>{{ page.title }}</h1>
+	<p class="edit-date">created: {{ page.date | date: "%Y.%m.%d" }}</p>
+	<p class="edit-date">updated: {{ page.update | date: "%Y.%m.%d" }}</p>
+</div>
+<div class="post-content">
+	{{ content }}
+</div>
