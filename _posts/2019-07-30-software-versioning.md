@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "소프트웨어에 버전을 부여하는 방법"
-date: 2019-07-28 18:30:05 +0900
-update: 2019-07-28 18:30:10 +0900
+date: 2019-07-30 13:30:05 +0900
+update: 2019-07-30 13:30:10 +0900
 categories: retrospective book-meeting
 ---
 
