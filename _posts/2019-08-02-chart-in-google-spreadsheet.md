@@ -2,10 +2,12 @@
 layout: post
 title: "구글 앱스 스크립트로 차트 만들기"
 date: 2019-08-02 15:39:46 +0900
-update: 2019-08-02 15:39:54 +0900
-categories: retrospective book-meeting
+update: 2019-08-05 17:56:54 +0900
+categories: [tutorial, appsscript, chart]
 ---
 
+* TOC
+{:toc}
 
 # 목표
 
@@ -46,31 +48,52 @@ sheet.insertChart(chart);
 차트 유형에 따라 변경할 수 있는 옵션이 다르다. 일례로 [파이 차트](https://developers.google.com/chart/interactive/docs/gallery/piechart)에 옵션을 추가해서 구현해보겠다.
 
 ```javascript
-var title = 'Chart Title';
+var title = '면적별 세대수';
 var titleTextStyle = {
   color: 'black',
-  fontSize: 30
+  fontSize: 36,
+  bold: true,
+  alignment: 'center'
+};
+var backgroundColor = {
+  fill: 'white'
 };
 var pieSliceTextStyle = {
-  color: 'black',
+  fontSize: 16,
+  bold: true
 };
+var legend = {
+  position: 'right',
+  textStyle: {
+    fontSize: 24,
+    bold: true,
+    color: 'black'
+  }
+};
+var pieHole = 0.5;
+var height = 660;
+var width = 750;
 
 var chart = sheet.newChart()
   .addRange(sheet.getRange("A10:C20"))
   .setChartType(Charts.ChartType.PIE)
   .setPosition(1, 1, 50, 50)
+  .setOption('backgroundColor', backgroundColor)
   .setOption('title', title)
   .setOption('titleTextStyle', titleTextStyle)
+  .setOption('legend', legend)
+  .setOption('is3D', true)
   .setOption('pieSliceTextStyle', pieSliceTextStyle)
-  .setOption('pieHole', 0.4)
-  .setOption('pieSliceText', 'label')
-  .setOption('fontSize', 24)
-  .setOption('height', 600)
-  .setOption('width', 1000)
+  .setOption('pieHole', pieHole)
+  .setOption('pieSliceText', 'value')
+  .setOption('height', height)
+  .setOption('width', width)
   .build();
 
 sheet.insertChart(chart);
 ```
+
+이렇게 [파이 차트](/assets/piechart.png){:target="_blank"}가 생성된다.
 
 # Links
 
@@ -78,3 +101,5 @@ sheet.insertChart(chart);
 * [Addtional Charts Gallery](https://developers.google.com/chart/interactive/docs/more_charts)
 * [Code Examples Google Charts](https://developers.google.com/chart/interactive/docs/examples)
 * [treemap chart in google sheets](https://infoinspired.com/google-docs/spreadsheet/tree-map-chart-in-google-sheets/)
+* [Choosing the Right Chart](https://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf)
+* [How to get link to open in new tab in Kramdown](https://stackoverflow.com/questions/4425198/markdown-target-blank#answer-4705645)
