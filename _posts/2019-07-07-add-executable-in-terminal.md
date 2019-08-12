@@ -2,8 +2,8 @@
 layout: post
 title: "터미널에서 원하는 프로그램 실행하는 법"
 date: 2019-07-07 15:38:05 +0900
-update: 2019-07-25 22:06:48 +0900
-categories: tutorial terminal shell
+update: 2019-08-12 22:51:14 +0900
+categories: [tutorial, terminal, shell]
 ---
 
 * TOC
@@ -57,4 +57,11 @@ open /Applications/Google\ Chrome.app
 
 ```bash
 $ chrome
+```
+
+참고로 실행 가능한 명령어가 참조하는 경로는 다음과 같이 확인한다:
+
+```bash
+$ which chrome
+/usr/local/bin/chrome
 ```
