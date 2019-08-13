@@ -2,7 +2,7 @@
 layout: post
 title: "Chart.js로 구현한 차트를 이미지로 가져오기"
 date: 2019-08-12 10:55:43 +0900
-update: 2019-08-12 13:06:57 +0900
+update: 2019-08-13 13:23:06 +0900
 categories: [tutorial, javascript, chartjs]
 ---
 
@@ -114,7 +114,8 @@ Chart.js로 구현한 차트를 구글 앱스스크립트에서 이미지로 가
 </script>
 ```
 
-[이미지가 있는 파이차트](/assets/outlabels-with-image.html)
+* [파이차트 html 코드](/assets/outlabels-with-image.html)
+* [파이차트 이미지](/assets/outlabels.png)
 
 # Links
 
