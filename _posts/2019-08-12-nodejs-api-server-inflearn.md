@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "nodeJS API 서버 만들기 실습"
+title: "[WIP] nodeJS API 서버 만들기 실습"
 date: 2019-08-12 21:40:20 +0900
-update: 2019-08-13 14:25:40 +0900
+update: 2019-08-14 16:29:27 +0900
 categories: [tutorial, javascript, nodejs]
-published: true
+published: false
 ---
 
 * TOC
