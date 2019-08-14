@@ -2,7 +2,7 @@
 layout: post
 title: "Chart.js로 구현한 차트를 Apps Script에서 이미지로 가져오기"
 date: 2019-08-12 10:55:43 +0900
-update: 2019-08-14 13:11:28 +0900
+update: 2019-08-14 13:46:51 +0900
 categories: [tutorial, javascript, chartjs]
 ---
 
@@ -94,7 +94,7 @@ Chart.js로 구현한 차트를 구글 앱스스크립트에서 이미지로 가
         }
     });
 
-    /**
+    /*
      * 천 단위 콤마 표시
      */
     function formatNumber(num) {
@@ -106,44 +106,64 @@ Chart.js로 구현한 차트를 구글 앱스스크립트에서 이미지로 가
     }
 
     /*
-     * 이미지 URL 구하기
+     * 이미지 URL이 담긴 이미지 태그 생성하기
      */
-    var canvas = document.getElementById('outlabeledChart')
+    var canvas = document.getElementById('outlabeledChart');
     var imageUrl = canvas.toDataURL('image/png');
     document.write('<img id="chartImage" src="'+imageUrl+'" />');
+
+    /*
+     * HTML 렌더링 후 로컬에 자동으로 파일 다운로드
+     */
+    var fileName = 'fileName';
+    document.write('<a id="imageDownload" href="'+ imageUrl+'" download="'+fileName+'">이미지 파일 다운로드</a>');
+    var imageDownload = document.getElementById('imageDownload');
+    imageDownload.click();
 </script>
 ```
 
 * [파이차트 html 코드](/assets/outlabels-with-image.html)
 * [파이차트 이미지](/assets/outlabels.png)
 
+위 코드로 만든 HTML 파일을 서버에 요청하면, 응답이 오는 동시에 로컬에 차트 이미지가 다운로드 된다.
+
 ## 앱스 스크립트로 이미지 삽입하기
 
 ```javascript
 function insertImageOnSpreadsheet() {
-  var spreadsheetId = '1OwR0lm_3CfC2Uoua7D4kwxo3Z1cGnzCE35GEWWU1nDU';
+  var spreadsheetId = 'spreadsheet_id_in_url';
   var spreadsheet = SpreadsheetApp.openById(spreadsheetId);
   var sheet = spreadsheet.getSheetByName('getChartImage');
   
   /*
    * 이미지 URL로 이미지 binary 가져오기
    */
-//  var reportName = 'outlabels.png';
-//  var imageUrl = 'https://datalater.github.io/assets/' + reportName;
-//  var response = UrlFetchApp.fetch(imageUrl);
-  
-  /*
-   * HTML URL로 이미지 binary 가져오기
-   */
-  var htmlUrl = 'https://datalater.github.io/assets/outlabels-with-image.html';
-  var response = UrlFetchApp.fetch(htmlUrl);
+  var reportName = 'outlabels.png';
+  var imageUrl = 'https://datalater.github.io/assets/' + reportName;
+  var response = UrlFetchApp.fetch(imageUrl);
   var binaryData = response.getContent();
-
+  
   // Insert the image in cell A1.
   var blob = Utilities.newBlob(binaryData, 'image/png', 'MyImageName');
   sheet.insertImage(blob, 1, 1);
 }
 ```
+
+`https://datalater.github.io` 서버에 저장된 `outlabels.png`를 가져와서 구글 스프레드시트에 삽입한다.
+
+# 아직 구현되지 않은 로직
+
+현재 생각하고 있는 전체 로직은 다음과 같다.
+
+* step1:  Apss Script API가 차트 이미지를 생성하는 nodeJS API에게 면적별 세대수 데이터를 넘겨주면서 "차트 이미지 만들어줘"라고 요청을 한다.
+* step2: nodeJS API는 요청을 받고 차트 이미지가 담긴 URL이나 차트 이미지 바이너리 데이터를 Apps Script API에게 반환한다.
+* step3: 차트 이미지를 받은 Apps Script API는 스프레드시트에 이미지를 삽입한다.
+
+구현 여부는 다음과 같다.
+
+* step1: TODO.
+* step2: In Progress. nodeJS API가 차트를 만드는 로직은 [차트의 이미지 URL 구하기](#차트의-이미지-url-구하기)를 참고하면 되는데, nodeJS로 요청 파라미터를 받고 이미지 URL을 응답 파라미터로 반환하는 기능은 만들어야 한다.
+* step3: DONE. [앱스 스크립트로 이미지 삽입하기](#앱스-스크립트로-이미지-삽입하기) 참고. 
 
 # Links
 
