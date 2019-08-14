@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Chart.js로 구현한 차트를 이미지로 가져오기"
+title: "Chart.js로 구현한 차트를 Apps Script에서 이미지로 가져오기"
 date: 2019-08-12 10:55:43 +0900
-update: 2019-08-13 13:23:06 +0900
+update: 2019-08-14 13:11:28 +0900
 categories: [tutorial, javascript, chartjs]
 ---
 
@@ -117,7 +117,36 @@ Chart.js로 구현한 차트를 구글 앱스스크립트에서 이미지로 가
 * [파이차트 html 코드](/assets/outlabels-with-image.html)
 * [파이차트 이미지](/assets/outlabels.png)
 
+## 앱스 스크립트로 이미지 삽입하기
+
+```javascript
+function insertImageOnSpreadsheet() {
+  var spreadsheetId = '1OwR0lm_3CfC2Uoua7D4kwxo3Z1cGnzCE35GEWWU1nDU';
+  var spreadsheet = SpreadsheetApp.openById(spreadsheetId);
+  var sheet = spreadsheet.getSheetByName('getChartImage');
+  
+  /*
+   * 이미지 URL로 이미지 binary 가져오기
+   */
+//  var reportName = 'outlabels.png';
+//  var imageUrl = 'https://datalater.github.io/assets/' + reportName;
+//  var response = UrlFetchApp.fetch(imageUrl);
+  
+  /*
+   * HTML URL로 이미지 binary 가져오기
+   */
+  var htmlUrl = 'https://datalater.github.io/assets/outlabels-with-image.html';
+  var response = UrlFetchApp.fetch(htmlUrl);
+  var binaryData = response.getContent();
+
+  // Insert the image in cell A1.
+  var blob = Utilities.newBlob(binaryData, 'image/png', 'MyImageName');
+  sheet.insertImage(blob, 1, 1);
+}
+```
+
 # Links
 
 * [HTMLCanvasElement.toDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL)
 * [Capture HTML Canvas as png](https://stackoverflow.com/questions/923885/capture-html-canvas-as-gif-jpg-png-pdf)
+* [insert image into spreadsheet](https://stackoverflow.com/questions/41020598/insert-image-into-spresheet-cell-from-drive-using-google-apps-script)

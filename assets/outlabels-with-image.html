@@ -57,7 +57,7 @@
                 fontSize: 40,
                 fontColor: '#000'
             },
-            zoomOutPercentage: 30, // makes chart 55% smaller (50% by default, if the preoprty is undefined)
+            zoomOutPercentage: 30, // makes chart 55% smaller (50% by default, if the property is undefined)
             plugins: {
                 legend: false,
                 outlabels: {
@@ -74,7 +74,7 @@
         }
     });
 
-    /**
+    /*
      * 천 단위 콤마 표시
      */
     function formatNumber(num) {
@@ -88,7 +88,20 @@
     /*
      * 이미지 URL 구하기
      */
-    var canvas = document.getElementById('outlabeledChart')
+    var canvas = document.getElementById('outlabeledChart');
     var imageUrl = canvas.toDataURL('image/png');
     document.write('<img id="chartImage" src="'+imageUrl+'" />');
+
+    /*
+     * 저장 API에 호출
+     */
+    var oReq = new XMLHttpRequest();
+
+    /*
+     * 이미지 파일 다운로드
+     */
+    var fileName = '반포동18-1';
+    document.write('<a id="imageDownload" href="'+ imageUrl+'" download="'+fileName+'">이미지 파일 다운로드</a>')
+    var imageDownload = document.getElementById('imageDownload');
+    imageDownload.click();
 </script>
