@@ -2,7 +2,7 @@
 layout: post
 title: "nodeJS API 서버 만들기 실습 - Part 1. 프로젝트 생성 및 테스트 환경 구성"
 date: 2019-08-14 16:31:38 +0900
-update: 2019-08-14 17:50:52 +0900
+update: 2019-08-19 10:15:43 +0900
 categories: [tutorial, javascript, nodejs]
 ---
 
@@ -45,7 +45,7 @@ $ npm install --save-dev mocha should
 
 간단하게 테스트 코드를 작성하기 위해 `server.spec.js` 이름으로 파일을 만든다. 테스트 파일은 파일명에 spec 또는 test를 붙이는 관례가 있는데 여기서는 spec으로 사용한다.
 
-파일에 아래 코드를 붙여 넣는다.
+`server.spec.js` 파일에 아래 코드를 붙여 넣는다.
 
 ```javascript
 const should = require('should')
@@ -61,7 +61,7 @@ describe('server test suite', () => {
 `server` 모듈을 가져와서 실행한 값이 'Hello world' 문자열인지 검증하는 코드다. 테스트 코드를 실행하기 위해 모카 명령어를 입력한다.
 
 ```bash
-$ node_modules/.bin/mocha server.sepc.js
+$ node_modules/.bin/mocha server.spec.js
 /Users/jay/Practice/node-api/node_modules/yargs/yargs.js:1163
       else throw err
            ^
