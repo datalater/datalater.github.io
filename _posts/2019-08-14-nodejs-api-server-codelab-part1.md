@@ -2,7 +2,7 @@
 layout: post
 title: "nodeJS API 서버 만들기 실습 - Part 1. 프로젝트 생성 및 테스트 환경 구성"
 date: 2019-08-14 16:31:38 +0900
-update: 2019-08-19 10:15:43 +0900
+update: 2019-08-19 14:43:08 +0900
 categories: [tutorial, javascript, nodejs]
 ---
 
@@ -58,7 +58,9 @@ describe('server test suite', () => {
 })
 ```
 
-`server` 모듈을 가져와서 실행한 값이 'Hello world' 문자열인지 검증하는 코드다. 테스트 코드를 실행하기 위해 모카 명령어를 입력한다.
+`describe()`는 테스트 꾸러미(Test Suite)라고 하며, 테스트 환경을 기술한다. `it()`은 테스트 케이스(Test Case)라고 하며 단위 테스트를 정의한다.
+
+위 코드는 `server` 모듈을 가져와서 실행한 값이 'Hello world' 문자열인지 검증한다. 테스트 코드를 실행하기 위해 모카 명령어를 입력한다.
 
 ```bash
 $ node_modules/.bin/mocha server.spec.js
