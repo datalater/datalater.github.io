@@ -2,7 +2,7 @@
 layout: post
 title: "[WIP] MySQL Indexes 개념 정리"
 date: 2019-08-22 11:42:36 +0900
-update: 2019-08-22 18:19:11 +0900
+update: 2019-08-28 18:20:52 +0900
 categories: [database, mysql]
 ---
 
@@ -26,6 +26,19 @@ categories: [database, mysql]
 마치 영어 사전에서 magnolia를 찾을 때 처음부터 찾을 필요 없이 `m`부터 찾을 수 있는 것과 비슷하다.
 
 > magnolia: 목련
+
+# 인덱스의 종류와 주요 특징 [WIP]
+
+인덱스에는 2가지 종류가 있다.
+
+* 클러스터 인덱스(clustered index):
+* 비클러스터 인덱스(non-clustered index):
+
+MySQL에서 쓰이는 인덱스를 살펴보자.
+
+* `PRIMARY KEY`: 클러스터 인덱스(clustered index)이기 때문에 테이블당 1개만 생성 가능하며, 순서가 존재한다. 순서가 자주 바뀔 것으로 예상되는 칼럼은 `PRIMARY KEY`로 사용하지 않아야 한다. `INSERT`할 때마다 비용이 크기 때문에 성능 이슈가 발생할 수 있다. 예를 들어, 유저 테이블에서 이메일 주소 칼럼을 `PK`(=`PRIMARY KEY`)로 잡을 경우, `abraham`으로 시작하는 이메일이 등장하면 `abraham`보다 알파벳 순서가 뒤인 모든 로우의 순서를 다 변경시켜야 한다.
+* `UNIQUE KEY`: 비클러스터 인덱스(non-clustered index)이기 때문에 순서가 존재하지 않는다. 테이블에서 값이 중복되지 않아야 하는 칼럼에 지정한다. 유저 테이블에서 이메일이 중복되지 않아야 한다면, 이메일 칼럼은 `PK`가 아니라 `UNIQUE KEY`로 잡아야 한다.
+
 
 # 인덱스가 저장되는 위치
 
@@ -52,5 +65,6 @@ WIP
 # Links
 
 * [8.3.1 How MySQL Uses Indexes \| MySQL](https://dev.mysql.com/doc/refman/8.0/en/mysql-indexes.html)
+* [Clustered vs Non-clustered Index: Key Differences with Example](https://www.guru99.com/clustered-vs-non-clustered-index.html)
 
 

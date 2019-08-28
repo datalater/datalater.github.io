@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "클린 아키텍처 독서노트"
+title: "[WIP] 클린 아키텍처 독서노트"
 date: 2019-08-27 19:29:16 +0900
-update: 2019-08-27 20:53:57 +0900
+update: 2019-08-28 18:21:31 +0900
 categories: [book-report, TIR, architecture]
 ---
 
