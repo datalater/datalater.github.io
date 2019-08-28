@@ -112,7 +112,10 @@ a {
 
   &:hover {
     color: $text-color;
-    text-decoration: underline;
+    // text-decoration: underline;
+	background-color: #e1e1e1;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
   }
 
   .social-media-list &:hover {
