@@ -2,7 +2,7 @@
 layout: post
 title: "[WIP] 인프런 Node.js 웹 개발 강의 정리"
 date: 2019-09-01 17:44:00 +0900
-update: 2019-09-01 21:28:56 +0900
+update: 2019-09-02 21:31:46 +0900
 categories: ['javascript', 'express']
 ---
 
@@ -149,7 +149,7 @@ app.get("/", function(req, res) {
 });
 ```
 
-브라우저에면서 `127.0.0.1:3000`으로 서버에 접속해보면 `main.html` 내용이 출력된다.
+브라우저에서 `127.0.0.1:3000`으로 서버에 접속해보면 `main.html` 내용이 출력된다.
 
 ## 결론
 
@@ -178,7 +178,7 @@ console.log("main js loaded");
 
         <p>Lorem ipsum dolor sit ament.</p>
 
-        <script = src="main.js"></script>
+        <script src="main.js"></script>
     </body>
 </html>
 ```
@@ -217,7 +217,7 @@ app.get("/", function(req, res) {
         <p>Lorem ipsum dolor sit ament.</p>
 
         <img src="images/favicon.png" alt="">
-        <script = src="main.js"></script>
+        <script src="main.js"></script>
     </body>
 </html>
 ```
@@ -252,13 +252,13 @@ app.get("/main", function(req, res) {
   <body>
     <form action="/email_post" method="post">
       email : <input type="text" name="email" /><br />
-      <input = type="submit">
+      <input type="submit">
     </form>
   </body>
 </html>
 ```
 
-`127.0.0.1:3000/form.html`에 접속하면 `form.html`이 렌더링된다. 이메일을 입력해서 `submit` 버튼을 눌러본다. `Cannot POST /email_post` 오류가 발생한다. 아직 `/email_post'에 대한 URL 라우팅 처리를 안해줬기 때문이다.
+`127.0.0.1:3000/form.html`에 접속하면 `form.html`이 렌더링된다. 이메일을 입력해서 `submit` 버튼을 눌러본다. `Cannot POST /email_post` 오류가 발생한다. 아직 `/email_post`에 대한 URL 라우팅 처리를 안해줬기 때문이다.
 
 `app.js`에 가서 post 요청에 대한 라우팅 처리를 추가한다:
 
@@ -426,5 +426,61 @@ app.post("/email_post", function(req, res) {
 다시 말하면, `node_modules`는 크고 무거운 파일이라 github에 업로드하지 않는다.
 
 # 07 JSON 활용한 Ajax 처리
+
+Ajax 처리를 노드 웹 서버와 연동을 해서 구현해본다. Ajax 처리는 브라우저 새로고침 없이 xml http request로 서버와 데이터를 주고받을 수 있다.
+
+`form.html` 코드:
+
+```html
+<html>
+  <head> </head>
+  <body>
+    <form action="/email_post" method="post">
+      email : <input type="text" name="email" /><br />
+      <input type="submit" />
+    </form>
+
+    <button class="ajaxsend">ajaxsend</button>
+
+    <div class="result"></div>
+
+    <script>
+      document.querySelector(".ajaxsend").addEventListener("click", function() {
+        var inputdata = document.forms[0].elements[0].value;
+        sendAjax("http://127.0.0.1:3000/ajax_send_email", inputdata);
+      });
+
+      function sendAjax(url, data) {
+        var data = { email: data };
+        data = JSON.stringify(data);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(data);
+        xhr.addEventListener("load", function() {
+          var result = JSON.parse(xhr.responseText);
+
+          if (result.result !== "OK") return;
+
+          document.querySelector(".result").innerHTML = result.email;
+        });
+      }
+    </script>
+  </body>
+</html>
+```
+
+`app.js` 코드:
+
+```javascript
+app.post("/ajax_send_email", function(req, res) {
+  console.log(req.body.email);
+  var responseData = { result: "OK", email: req.body.email };
+  res.json(responseData);
+});
+```
+
+# 08 중간 실습 과제 1
 
 
