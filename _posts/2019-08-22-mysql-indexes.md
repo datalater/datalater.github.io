@@ -2,7 +2,7 @@
 layout: post
 title: "[WIP] MySQL Indexes 개념 정리"
 date: 2019-08-22 11:42:36 +0900
-update: 2019-08-28 18:20:52 +0900
+update: 2019-09-17 21:05:56 +0900
 categories: [database, mysql]
 ---
 
@@ -27,12 +27,17 @@ categories: [database, mysql]
 
 > magnolia: 목련
 
-# 인덱스의 종류와 주요 특징 [WIP]
+# 인덱스의 종류
 
 인덱스에는 2가지 종류가 있다.
 
-* 클러스터 인덱스(clustered index):
-* 비클러스터 인덱스(non-clustered index):
+* 클러스터 인덱스(clustered index): 
+	* 테이블 내 데이터 순서를 정의한다.
+	* 테이블 당 오직 한 개만 존재한다.
+* 비클러스터 인덱스(non-clustered index): 
+	* 테이블 내 데이터 순서를 정렬하지 않는다.
+	* 칼럼 값과 해당 칼럼 값의 레코드 주소를 저장한다.
+	* 쿼리에 인덱스 칼럼이 포함되면 DB는 먼저 인덱스로 가서 해당 값과 일치하는 레코드 주소를 찾는다.
 
 MySQL에서 쓰이는 인덱스를 살펴보자.
 
@@ -66,5 +71,6 @@ WIP
 
 * [8.3.1 How MySQL Uses Indexes \| MySQL](https://dev.mysql.com/doc/refman/8.0/en/mysql-indexes.html)
 * [Clustered vs Non-clustered Index: Key Differences with Example](https://www.guru99.com/clustered-vs-non-clustered-index.html)
+* [What is the difference between Clustered and Non-Clustered Indexes in SQL Server?](https://www.sqlshack.com/what-is-the-difference-between-clustered-and-non-clustered-indexes-in-sql-server/)
 
 
