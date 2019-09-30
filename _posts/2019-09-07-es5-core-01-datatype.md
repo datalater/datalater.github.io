@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "[WIP] 자바스크립트 ES5 핵심개념 강의노트 - 01 데이터 타입"
+title: "ES5 핵심개념 - 01 데이터 타입"
 date: 2019-09-07 17:23:33 +0900
-update: 2019-09-07 21:35:03 +0900
+update: 2019-09-30 20:47:43 +0900
 categories: ['javascript']
 ---
 
