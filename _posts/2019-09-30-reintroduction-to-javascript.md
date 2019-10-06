@@ -2,7 +2,7 @@
 layout: post
 title: "A re-introduction to JavaScript"
 date: 2019-09-30 19:58:36 +0900
-update: 2019-09-30 20:29:31 +0900
+update: 2019-10-06 20:13:00 +0900
 categories: ['javascript']
 ---
 
@@ -12,6 +12,18 @@ categories: ['javascript']
 # 참고한 글
 
 [A re-introduction to JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+
+# 계기
+
+리액트 튜토리얼을 하기 전에 자바스크립트에 대해 간단히 복습하기 위해 이 문서를 읽고 정리한다.
+
+* 리액트가 무엇인지 궁금해서 공식 홈페이지에 들어갔다.
+* 튜토리얼을 따라하기로 마음 먹었다.
+* 튜토리얼에서 자바스크립트를 리뷰하고 싶은 사람에게 추천하는 가이드가 있었다.
+* 그 가이드가 지금 정리하려는 이 문서이다.
+
+> Prerequisites
+> * If you need to review JavaScript, we recommend reading [this guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript).
 
 # Overview
 
@@ -131,3 +143,7 @@ var a = ['dog' , 'cat', 'hen'];
 var b = ['fox', 'wolf'];
 var c = a.concat(b); // ["dog", "cat", "hen", "fox", "wolf"]
 ```
+
+## Functions
+
+
