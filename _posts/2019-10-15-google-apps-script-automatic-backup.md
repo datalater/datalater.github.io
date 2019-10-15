@@ -2,7 +2,7 @@
 layout: post
 title: "구글 앱스스크립트로 폴더 자동 정리하기"
 date: 2019-10-15 10:34:31 +0900
-update: 2019-10-15 11:37:46 +0900
+update: 2019-10-15 11:39:42 +0900
 categories: ['appsscript']
 ---
 
@@ -122,7 +122,7 @@ function runCleaner() {
 
 # 자동화
 
-폴더에 파일이 n개 이상 쌓이는 것을 특정 날짜에 주기적으로 청소하도록 트리거를 만든다.
+폴더에 파일이 n개 이상 쌓이는 것을 특정 날짜에 주기적으로 청소하도록 `runCleaner`함수를 실행시키는 트리거를 만든다.
 
 ```javascript
 function createTimeDrivenTriggers() {
