@@ -2,7 +2,7 @@
 layout: post
 title: "구글 앱스스크립트로 폴더 자동 정리하기"
 date: 2019-10-15 10:34:31 +0900
-update: 2019-10-15 11:16:26 +0900
+update: 2019-10-15 11:37:46 +0900
 categories: ['appsscript']
 ---
 
@@ -34,7 +34,7 @@ function testFolderIsFull() {
 }
 ```
 
-> assertSame() 함수는 직접 만들어서 사용했다.
+> assertSame() 함수는 직접 만들어서 사용했다. 참고 [GitHub](https://github.com/datalater/apps-script-auto-cleaner)
 
 위 테스트 함수는 지정한 폴더에 파일이 5개 이상일 것이기 때문에 가득 찬 것으로 나오기를 기대한다.
 
@@ -141,3 +141,9 @@ function createTimeDrivenTriggers() {
 # 전체 코드
 
 [https://github.com/datalater/apps-script-auto-cleaner](https://github.com/datalater/apps-script-auto-cleaner)
+
+# Links
+
+* [DriveApp API](https://developers.google.com/apps-script/reference/drive/drive-app)
+* [How to install trigger](https://developers.google.com/apps-script/guides/triggers/installable)
+* [getScriptTimezone()](https://developers.google.com/apps-script/reference/base/session)
