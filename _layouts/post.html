@@ -2,7 +2,7 @@
 layout: default
 ---
 <head>
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
 </head>
 <style>
 .post-header p.edit-date {
@@ -14,14 +14,15 @@ layout: default
 .post-content {
 	background-color: #fff;
 	color: #4a4a4a;
-	line-height: 1.7;
-}
-.post-content code, .edit-date {
-	font-family: Ubuntu, sans-serif;
+	line-height: 1.5;
 }
 
-code, .highlighter-rouge .highlight {
-	background-color: #f9f9f9;
+.post-content code {
+	font-family: "Source Code Pro", "Courier New", Courier, 'Ubuntu Mono', monospace;
+}
+
+.post-content .edit-date {
+	font-family: Ubuntu, sans-serif;
 }
 
 .post-content ul#markdown-toc {

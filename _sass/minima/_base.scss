@@ -133,11 +133,14 @@ a {
  */
 blockquote {
   color: $grey-color;
-  border-left: 4px solid $grey-color-light;
+  border-left: 6px solid $grey-color-light;
   padding-left: $spacing-unit / 2;
+  padding-top: $spacing-unit / 2;
+  padding-bottom: $spacing-unit / 2;
+  padding-right: $spacing-unit / 2;
   @include relative-font-size(1.125);
   letter-spacing: -1px;
-  font-style: italic;
+  background: whitesmoke;
 
   > :last-child {
     margin-bottom: 0;
@@ -145,19 +148,21 @@ blockquote {
 }
 
 
-
 /**
  * Code formatting
  */
-pre,
+pre code {
+  @include relative-font-size(0.9375);
+  border: 1px solid $grey-color-light;
+  border-radius: 3px;
+  background-color: #232323;
+}
+
 code {
   @include relative-font-size(0.9375);
   border: 1px solid $grey-color-light;
   border-radius: 3px;
-  background-color: #eef;
-}
-
-code {
+  background-color: #f9f9f9;
   padding: 1px 5px;
 }
 
