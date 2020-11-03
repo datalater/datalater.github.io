@@ -4,6 +4,7 @@ title: "[WIP] AWS Lambda for Node.js 가이드 문서 정리"
 date: 2019-09-18 13:37:06 +0900
 update: 2019-09-19 13:41:20 +0900
 categories: ['aws', 'serverless']
+published: false
 ---
 
 * TOC

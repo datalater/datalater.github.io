@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[WIP] MySQL Indexes 개념 정리"
+title: " MySQL Indexes 개념 정리"
 date: 2019-08-22 11:42:36 +0900
 update: 2019-09-17 21:05:56 +0900
 categories: [database, mysql]
@@ -12,7 +12,7 @@ categories: [database, mysql]
 
 # 목적
 
-로우가 9천만 개인 새로운 DB 테이블을 생성했다. unique 키를 잡으려는데 `MySQL said: Specified key was too long; max key length is 3072 bytes` 오류가 발생했다. unique 키를 뒤로 하고, 조회 속도를 높이기 위해 인덱스를 잡으려는데, unique 키를 안 써도 되는지, 나아가서 다른 인덱스는 어떤 기능을 하고 왜 필요한지 알기 위해서 정리한다.
+DB 테이블을 생성 후 unique 키를 잡으려는데 `MySQL said: Specified key was too long; max key length is 3072 bytes` 오류가 발생했다. unique 키를 뒤로 하고, 조회 속도를 높이기 위해 인덱스를 잡으려는데, unique 키를 안 써도 되는지, 나아가서 다른 인덱스는 어떤 기능을 하고 왜 필요한지 알기 위해서 정리한다.
 
 # 인덱스란 무엇인가
 
@@ -59,8 +59,6 @@ MySQL에서 쓰이는 인덱스를 살펴보자.
 * 테이블을 조인할 때 다른 테이블의 로우를 읽기 위해서
     > 인덱스를 적용한 칼럼들이 데이터 타입이 같고 크기도 같으면 더욱 효율적으로 사용할 수 있다.
 * 칼럼의 `MIN()`과 `MAX()` 값을 찾기 위해서
-
-WIP
 
 # 추가 공부
 

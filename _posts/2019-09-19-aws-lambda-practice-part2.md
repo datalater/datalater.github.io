@@ -4,6 +4,7 @@ title: "AWS Lambda 실습 Part.2 Deploy Node.js hello world"
 date: 2019-09-19 17:08:20 +0900
 update: 2019-09-19 17:35:08 +0900
 categories: ['aws', 'serverless']
+published: false
 ---
 
 * TOC

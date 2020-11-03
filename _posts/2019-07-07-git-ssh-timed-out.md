@@ -2,13 +2,12 @@
 layout: post
 title: "git ssh timed out"
 date: 2019-07-07 16:06:05 +0900
-update: 2019-07-26 23:25:42 +0900
+update: 2019-07-07 22:56:58 +0900
 categories: git ssh troubleshooting
 ---
 
 * TOC
 {:toc}
-
 
 # 문제 상황
 
@@ -45,8 +44,8 @@ $ vim ~/.ssh/config
 
 ```bash
 Host github.com
-	HostName ssh.github.com
-	Port 443
+    HostName ssh.github.com
+    Port 443
 ```
 
 위 내용은 HTTPS port로 SSH 커넥션을 만든 것이다. 대부분의 방화벽은 HTTPS port를 사용한 SSH 커넥션을 허용한다고 한다.

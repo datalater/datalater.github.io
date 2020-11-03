@@ -4,6 +4,7 @@ title: "AWS Lambda 실습 Part.4 Fetch logs"
 date: 2019-09-19 18:02:20 +0900
 update: 2019-09-19 18:26:52 +0900
 categories: ['aws', 'serverless']
+published: false
 ---
 
 * TOC

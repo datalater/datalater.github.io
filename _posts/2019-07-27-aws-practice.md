@@ -4,6 +4,7 @@ title: "AWS 웹 서버 구축 연습"
 date: 2019-07-27 19:00:01 +0900
 update: 2019-07-27 19:00:11 +0900
 categories: practice aws webserver
+published: false
 ---
 
 * TOC

@@ -4,6 +4,7 @@ title: "AWS Lambda 실습 Part.1 Setting up AWS and serverless framework"
 date: 2019-09-19 16:41:06 +0900
 update: 2019-09-19 17:07:41 +0900
 categories: ['aws', 'serverless']
+published: false
 ---
 
 * TOC

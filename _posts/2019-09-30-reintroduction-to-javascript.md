@@ -4,6 +4,7 @@ title: "A re-introduction to JavaScript"
 date: 2019-09-30 19:58:36 +0900
 update: 2019-10-06 20:13:00 +0900
 categories: ['javascript']
+published: false
 ---
 
 * TOC
