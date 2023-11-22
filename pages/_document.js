@@ -22,7 +22,7 @@ class MyDocument extends Document {
           <meta property="og:description" content={meta.description} />
           <meta property="og:title" content={meta.title} />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@min" />
+          {/* <meta name="twitter:site" content="@min" /> */}
           <meta name="twitter:title" content={meta.title} />
           <meta name="twitter:description" content={meta.description} />
           <link rel="icon" type="image/x-icon" href={meta.image} />

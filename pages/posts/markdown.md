@@ -48,7 +48,11 @@ Ordered
 
 Inline `code`
 
+```js filename="example.js"
+console.log("hello, world");
 ```
+
+```jsx filename="pages/_app.js"
 export default function Nextra({ Component, pageProps }) {
   return (
     <>
@@ -69,7 +73,7 @@ export default function Nextra({ Component, pageProps }) {
       </Head>
       <Component {...pageProps} />
     </>
-  )
+  );
 }
 ```
 

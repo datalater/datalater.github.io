@@ -1,5 +1,5 @@
 export default {
-  footer: <p>MIT 2023 © Min.</p>,
+  footer: <p>MIT {new Date().getFullYear()} © Min.</p>,
   head: ({ title, meta }) => (
     <>
       {meta.description && (
@@ -11,7 +11,7 @@ export default {
   ),
   readMore: "Read More →",
   postFooter: null,
-  darkMode: false,
+  darkMode: true,
   navs: [
     {
       url: "https://github.com/datalater",
