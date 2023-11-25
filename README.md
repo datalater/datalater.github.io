@@ -145,6 +145,18 @@ Run the development server:
 pnpm run dev
 ```
 
+🚧 Get build file of `nextra-theme-blog/style.css`:
+
+> There is an issue that `nextra-theme-blog/style.css` is not built properly.
+> So the style will not be properly applied.
+> For example, the heading font size will not be different from the body font size.
+>
+> Since `nextra-theme-blog/tailwind.config.js` depends on `nextra-theme-docs/tailwind.config.js`, and `nextra-theme-docs/tailwind.config.js` depends not only on its package and but also on `nextra` package, unless we have `nextra` and `nextra-theme-docs` packages locally, we cannot build `nextra-theme-blog/style.css` properly.
+>
+> So, we will copy the build file of `nextra/theme-blog/style.css`. (You can get the file by running `pnpm add nextra-theme-blog`.)
+>
+> This section will be removed when the issue is resolved.
+
 ## 📚 See also
 
 - [pnpm - run commands for specific workspaces](https://pnpm.io/filtering#--filter-glob---filter-glob)
