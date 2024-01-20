@@ -20,12 +20,14 @@
     "nextra": "^2.13.2",
     "nextra-theme-blog": "workspace:*",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "use-sound": "^4.0.1"
   },
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
+    "file-loader": "^6.2.0",
     "tsup": "^8.0.1",
     "typescript": "^5.3.2"
   }
