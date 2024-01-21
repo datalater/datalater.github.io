@@ -9,13 +9,14 @@ export default {
       {meta.author && <meta name="author" content={meta.author} />}
     </>
   ),
-  readMore: "Read More →",
+  readMore: 'Read More →',
   postFooter: null,
   darkMode: true,
   navs: [
     {
-      url: "https://github.com/datalater",
-      name: "GitHub ↗",
-    },
-  ],
-};
+      url: 'https://github.com/datalater',
+      name: 'GitHub ↗',
+      newTab: true
+    }
+  ]
+}
