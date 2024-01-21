@@ -31,7 +31,7 @@ export default function Nav(): ReactElement {
         })}
         {config.navs?.map(nav => (
           <Link key={nav.url} href={nav.url} passHref legacyBehavior>
-            <a>{nav.name}</a>
+            <a target={nav.newTab ? '_blank' : '_self'}>{nav.name}</a>
           </Link>
         ))}
       </div>

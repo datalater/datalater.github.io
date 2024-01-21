@@ -24,6 +24,8 @@ export interface NextraBlogTheme {
   navs?: {
     name: string
     url: string
+    // TODO MIN: add property
+    newTab?: boolean
   }[]
   postFooter?: string
   readMore?: string
