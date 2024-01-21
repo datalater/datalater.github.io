@@ -18,7 +18,8 @@
     "editor.formatOnSave": true
   },
   "[mdx]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // do not use prettier for mdx because it breaks jsx formatting.
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.formatOnSave": true
   },
   "[typescript]": {
