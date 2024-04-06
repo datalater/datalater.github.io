@@ -15,7 +15,7 @@ export default {
   navs: [
     {
       url: 'https://github.com/datalater',
-      name: 'GitHub ↗',
+      name: 'GitHub',
       newTab: true
     }
   ]
