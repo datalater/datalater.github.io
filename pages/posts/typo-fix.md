@@ -7,6 +7,13 @@ tag: chrome-extension, control-characters
 
 # TypoFix - 맥에서 이상한 특수문자 입력되는 문제 해결하기
 
+- [데모](#데모)
+- [희망적인 생각](#희망적인-생각)
+  - [첫번째 희망](#첫번째-희망)
+  - [두번째 희망](#두번째-희망)
+- [병목과 돌파구](#병목과-돌파구)
+- [함께 읽기](#함께-읽기)
+
 아래와 같이 '�' 같은 이상한 특수문자가 나타나는 현상을 경험해보신 적이 있나요?
 
 ![control-character](./images/2024-05-26-15-13-17.png)
@@ -163,6 +170,8 @@ function bindHandler() {
   });
 }
 ```
+
+## 함께 읽기
 
 전체 코드를 보고 싶거나 TypoFix 크롬 확장 프로그램을 직접 사용하고 싶다면 [datalater/typo-fix](https://github.com/datalater/typo-fix)를 참고해주세요. ⭐️
 
