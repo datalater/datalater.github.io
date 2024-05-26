@@ -42,6 +42,10 @@ h1 {
   @apply nx-m-0;
 }
 
+.footnotes {
+  overflow-wrap: anywhere;
+}
+
 .footnotes a[data-footnote-backref] {
   font-family: initial;
 }
