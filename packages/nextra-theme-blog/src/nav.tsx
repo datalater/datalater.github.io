@@ -33,7 +33,27 @@ export default function Nav(): ReactElement {
           <Link key={nav.url} href={nav.url} passHref legacyBehavior>
             <a target={nav.newTab ? '_blank' : '_self'}>
               {nav.name}
-              {nav.newTab && <sup> ↗</sup>}
+              {nav.newTab && (
+                <span className="nx-inline-flex">
+                  <svg
+                    data-testid="geist-icon"
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    className="nx-text-current"
+                    style={{ width: 14, height: 14 }}
+                  >
+                    <path d="M7 17L17 7"></path>
+                    <path d="M7 7h10v10"></path>
+                  </svg>
+                </span>
+              )}
             </a>
           </Link>
         ))}
