@@ -52,6 +52,8 @@ TypoFix 덕분에 원래 하던 일에 집중할 수 있게 되었습니다.
 - 주로 맥에서 한글을 사용하는 경우에 발생하며 텍스트를 입력하다가 언어를 바꿔서 입력하거나 커서를 이동할 때 발생한다.
 - 이상한 특수문자의 정체는 [제어 문자(control character)](https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%96%B4_%EB%AC%B8%EC%9E%90) 또는 비인쇄 문자(non-printing character)이다.
 
+비슷한 성격의 제어 문자 목록은 [여기](https://github.com/datalater/typo-fix/blob/fe0e3e6ebc50dc283e64afc0b824455ce9396099/docs/control-characters.md)에 정리해두었습니다.
+
 ### 두번째 희망
 
 > 적어도 GitHub PR 작성할 때 발생하지 않았으면 좋겠다.
